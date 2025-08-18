@@ -1,0 +1,16 @@
+{
+  "name": "uma-campground",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "author": "Sam Aquino",
+  "description": "A modern campground with built-in booking and information site built with Astro",
+  "dependencies": {
+    "astro": "^5.13.2"
+  }
+}
