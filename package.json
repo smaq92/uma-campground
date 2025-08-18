@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "uma-campground",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +8,10 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "author": "Sam Aquino",
+  "description": "A modern campground with built-in booking and information site built with Astro",
   "dependencies": {
+    "@astrojs/partytown": "^2.1.4",
     "astro": "^5.13.2"
   }
 }
