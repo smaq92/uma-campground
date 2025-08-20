@@ -1,0 +1,12 @@
+.hamburger {
+  cursor: pointer;
+  width: 40px;
+  margin-right: 2.5rem;
+}
+
+.hamburger .line {
+  display: block;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: black;
+}
