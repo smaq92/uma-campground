@@ -12,6 +12,7 @@
   "description": "A modern campground with built-in booking and information site built with Astro",
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
-    "astro": "^5.13.2"
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "astro": "^5.15.4"
   }
 }

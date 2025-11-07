@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "FAQ Page";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+<section aria-labelledby="faq-heading">
+  <h1 id="faq-heading">Frequently Asked Questions</h1>
+    <div class="accordion-item">
+    <h2>
+      <button id="acc-1" aria-expanded="false" aria-controls="panel-1">What are the check-in and check-out times?</button>
+    </h2>
+    <div id="panel-1" role="region" aria-labelledby="acc-1" hidden>
+      <p>Check-in is from 2 PM to 8 PM, and check-out is by 11 AM.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2>
+      <button id="acc-2" aria-expanded="false" aria-controls="panel-2">How do I make a reservation?</button>
+    </h2>
+    <div id="panel-2" role="region" aria-labelledby="acc-2" hidden>
+      <p>You can reserve online or Call us at (780) 123-4567</p>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2>
+      <button id="acc-3" aria-expanded="false" aria-controls="panel-3">How can I cancel or change my booking?</button>
+    </h2>
+    <div id="panel-3" role="region" aria-labelledby="acc-3" hidden>
+      <p>You can cancel or change your booking online or by calling us at (780) 123-4567. Be sure to cancel it at least 48 hours in advance for a full refund. See our <a href="/policy_guidelines">cancellation policy</a> for more details.</p>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2>
+      <button id="acc-4" aria-expanded="false" aria-controls="panel-4">Are pets allowed at the campground?</button>
+    </h2>
+    <div id="panel-4" role="region" aria-labelledby="acc-4" hidden>
+      <p>Yes, we are pet-friendly. Please keep pets on a leash and clean up after them.</p>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2>
+      <button id="acc-5" aria-expanded="false" aria-controls="panel-5">How do I get there?</button>
+    </h2>
+    <div id="panel-5" role="region" aria-labelledby="acc-5" hidden>
+      <p>Our campground is located at 143 Pinto Road, Kaumaan Alberta T3H 675. You can reach us by car or public transport. </p>
+    </div>
+  </div>
+</section>
+</BaseLayout>
