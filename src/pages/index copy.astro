@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home Page";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <!-- hero image -->
+  <img src="https://source.unsplash.com/random/1200x900" alt="Hero Image" />
+  <!-- scroll for more -->
+  <h2>
+    Unbelievably Meditative Adventure (UMA) Campground offers a quaint, inviting
+    space to escape from the everyday monotony of life...
+  </h2>
+  <!-- form -->
+  <form action="">
+    <label for="booking-date">Select Date:</label>
+    <input type="date" id="booking-date" name="booking-date" required />
+    <label for="party-size">Party Size:</label>
+    <input
+      type="number"
+      id="party-size"
+      name="party-size"
+      min="1"
+      max="10"
+      required
+    />
+    <label for="equipment">Equipment</label>
+    <select id="equipment" name="equipment" required>
+      <option value="1" selected>Small Tent</option>
+      <option value="2">Big Tent</option>
+      <option value="3">Campervan/RV</option>
+    </select>
+    <button type="submit">Search Available Sites</button>
+  </form>
+  <div>
+    <div>
+      <img
+        src="https://source.unsplash.com/random/1200x900"
+        alt="serving-image"
+      />
+      <p>Been serving families since <b>2023</b></p>
+    </div>
+    <div>
+      <img
+        src="https://source.unsplash.com/random/1200x900"
+        alt="camping-image"
+      />
+      <p><b>15</b>Campsites</p>
+    </div>
+    <div>
+      <img
+        src="https://source.unsplash.com/random/1200x900"
+        alt="nature-image"
+      />
+      <p><b>4.9</b> Google</p>
+    </div>
+  </div>
+  <div class="interactive-dashboard">
+    <button>Amenities</button>
+    <button>Things to Do</button>
+    <button>Nearby Landmarks</button>
+    <button>Sites & Rates</button>
+  </div>
+  <div>
+    <div class="star-rating">
+      <span class="star checked">&#9733;</span>
+      <span class="star checked">&#9733;</span>
+      <span class="star checked">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+    <p>Fabio Smith</p>
+    <p>Miner</p>
+    <p>
+      The place has lots of hiking trails! I enjoyed my stay in UMA. I was
+      skeptical at first but the campground is full of life, from trees, bushes
+      and birds. I would definitely come back again.
+    </p>
+  </div>
+  <!-- add the carousel form using javascript -->
+<form>
+  <h2>Got Any Questions?</h2>
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" placeholder="Your email" required />
+  <label for="question">Message:</label>
+  <textarea id="question" name="question" rows="4" required></textarea>
+  <button type="submit">Message Us</button>
+  <small>Or you can head straight to our <a href="/faq">FAQ's page</a></small>
+</form>
+</BaseLayout>
