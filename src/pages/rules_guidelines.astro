@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Policy & Guidelines";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <!-- hide this h1  -->
+  <h1>Policy & Guidelines</h1>
+<section aria-labelledby="campsite-guidelines">
+  <h2 id="campsite-guidelines">Campsite Guidelines:</h2>
+    <ol>
+      <li><span><!-- icon --></span> Speed Limit: 10km/hr.</li>
+      <li><span><!-- icon --></span> Pay in Full.</li>
+    <li><span><!-- icon --></span> Check in time: 2pm</li>
+    <li><span><!-- icon --></span>Check-out time: 11am</li>
+    <li><span><!-- icon --></span> Quiet Time: 11pm - 8am</li>
+    <li><span><!-- icon --></span> Keep your campsite clean.</li>
+    <li><span><!-- icon --></span>Do not cut down trees</li>
+    <li><span><!-- icon --></span> Minors should be accompanies by an adult at all times.</li>
+    <li><span><!-- icon --></span> Pets must be kept on leash at all times.</li>
+    </ol>
+</section>
+<section aria-labelledby="cancellation-policy">
+  <h2 id="cancellation-policy">Cancellation Policy:</h2>
+  <p>Cancellation will only be processed through email not by phone.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Notice before check-in</th>
+        <th>Refund Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>48+ hours</td>
+        <td>100%</td>
+      </tr>
+            <tr>
+        <td>24-48 hours</td>
+        <td>50%</td>
+      </tr>
+            <tr>
+        <td>&lt; 24 hours</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Refund above doesn’t include the non-refundable booking fee (5% of the total amount or $15.00 - whichever is greater)</p>
+  <small>Exceptions:  Medical Emergencies or Extreme Weather Conditions (Typhoon, Hurricane). Exceptions require documentations (medical note, weather advisory).</small>
+</section>
+</BaseLayout>

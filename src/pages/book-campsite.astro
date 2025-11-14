@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Book a Campsite";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <h1>Book a Campsite</h1>
+    <form action="">
+      <label for="booking-date">Select Date:</label>
+      <input type="date" id="booking-date" name="booking-date" required />
+      <label for="party-size">Party Size:</label>
+      <input
+        type="number"
+        id="party-size"
+        name="party-size"
+        min="1"
+        max="10"
+        required
+      />
+      <label for="equipment">Equipment</label>
+      <select id="equipment" name="equipment" required>
+        <option value="1" selected>Small Tent</option>
+        <option value="2">Big Tent</option>
+        <option value="3">Campervan/RV</option>
+      </select>
+      <button type="submit">Search Available Sites</button>
+    </form>
+    <form action="">
+      <h2>Got Any Questions?</h2>
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your email"
+        required
+      />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Message Us</button>
+      <small>Or you can head straight to our FAQ’s page.</small>
+    </form>
+  </section>
+  <!-- popover? has to make html and then decide later -->
+  <section class="popover" id="uo1-popover" >
+    <button>Hide Details <!-- insert chevron icon here --></button>
+    <h2>UO1</h2>
+    <p>Un-serviced Campsite</p>
+    <h3>Allowable Equipment</h3>
+    <p>Tent(S-Md-Lg)</p>
+    <h3>Maximum Capacity</h3>
+    <p>5 people</p>
+    <h3>Amenities</h3>
+    <ol>
+      <li>no electric</li>
+      <li>no wi-fi</li>
+      <li>1 fire pit</li>
+      <li>1 picnic table</li>
+      <li>not wheelchair accessible</li>
+    </ol>
+    <h3>Privacy Level</h3>
+    <!-- insert like a graph -- figure that out -->
+    <div>
+      <p>$30.00/night</p>
+      <button>Book Now</button>
+    </div>
+  </section>
+</BaseLayout>

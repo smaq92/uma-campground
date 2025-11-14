@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Book a Campsite - Confirm Guidelines";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+<h1>Confirm Guidelines</h1>
+<section>
+  <div>
+    <h2>UO1</h2>
+    <button>Edit <!-- insert edit icon here --></button>
+  </div>
+  <div>
+    <p><!-- insert moon icon here -->1 Night</p>
+    <ol>
+      <li>
+        <h3>Check-in:</h3>
+        <p>Sun, Aug 10 After 3:00pm</p>
+        </li>
+       <li>
+                  <h3>Check-out:</h3>
+          <p>Mon, Aug 11 After 11:00am</p>
+       </li>
+        <li>
+          <h3>Party-Size</h3>
+          <p>1</p>
+        </li>
+        <li>
+          <h3>Equipment</h3>
+          <p>Small Tent</p>
+        </li>
+    </ol>
+  </div>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Rate</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U-Camp 1night @30.00</td>
+      <td>$30.00</td>
+    </tr>
+    <tr>
+      <td>Booking Fee (15.00)</td>
+      <td>$15.00</td>
+    </tr>
+  </tbody>
+</table>
+<input type="checkbox" id="guidelines" name="guidelines" required />
+<label for="guidelines">I have read and agree to the campground’s <a href="/rules_guidelines#cancellation-policy ">policy</a> and that I will adhere to all applicable <a href="/rules_guidelines#campsite-guidelines">UMA guidelines.</a>.</label>
+</section>
+</BaseLayout>
