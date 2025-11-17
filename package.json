@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:css": "stylelint \"**/*.scss\""
   },
   "author": "Sam Aquino",
   "description": "A modern campground with built-in booking and information site built with Astro",
@@ -14,5 +15,11 @@
     "@astrojs/partytown": "^2.1.4",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "astro": "^5.15.4"
+  },
+  "devDependencies": {
+    "sass": "^1.94.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-scss": "^6.12.1"
   }
 }

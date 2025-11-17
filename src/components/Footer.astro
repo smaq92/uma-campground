@@ -5,7 +5,16 @@ import Social from './Social.astro';
 <footer>
   <h2><img src="logo.png"alt="Uma Campground Logo"></h2>
   <p><em>"Your escape from reality, one campfire at a time."</em></p>
-  <!-- insert map here -->
+  <div class="map-embed" style="max-width:100%;height:0;padding-bottom:56%;position:relative;">
+    <iframe
+      src="https://www.google.com/maps?q=53.523638920642156,-112.97698959444676&t=k&z=16&output=embed"
+      style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="UMA Campground location (satellite)"
+    ></iframe>
+  </div>
    <address>
   143 Pinto Road<br/>
   Kaumaan Alberta<br/>
