@@ -1,16 +1,31 @@
+bn---
+const menuId = "main-menu";
+---
+<button class="hamburger-btn" aria-controls={menuId} aria-expanded="false" aria-label="Toggle navigation">
+  <img src="/hamburger-menu.svg" alt="Hamburger Menu" />
+</button>
 
-  <ul class="menu__links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about-us">About Us</a></li>
-    <li><a href="/gallery">Gallery</a></li>
-    <li><a href="/plan-your-stay">Plan Your Stay
-      <ul>
-        <li><a href="/sites-&-rates">Sites & Rates</a></li>
-        <li><a href="/amenities">Amenities</a></li>
-        <li><a href="/things-to-do">Things To Do</a></li>
-        <li><a href="/nearby-landmarks">Nearby Landmarks</a></li>
-        <li><a href="/FAQs">FAQs</a></li>
+<ul id={menuId} class="menu_links">
+  <li><a href="/">Home</a></li>
+  <li><a href="/about-us">About Us</a></li>
+  <li><a href="/gallery">Gallery</a></li>
+  <li class="has-dropdown">
+    <a href="/plan-your-stay">Plan Your Stay</a>
+      <ul class="sub-menu">
+        <li><a href="/plan-your-stay#sites-and-rates">Sites & Rates</a></li>
+        <li><a href="/plan-your-stay#amenities">Amenities</a></li>
+        <li><a href="/plan-your-stay#things-to-do">Things To Do</a></li>
       </ul>
-    </a></li>
-    <li><a href="/plan-your-stay">Contact Us</a></li>
-  </ul>
+  </li>
+  <li><a href="/map">Campsite Map</a></li>
+  <li class="has-dropdown">
+    <a href="/know-before-you-go"
+      >Know Before You Go</a>
+      <ul class="sub-menu">
+        <li><a href="/know-before-you-go#guidelines">Guidelines</a></li>
+        <li><a href="/know-before-you-go#policies">Policies</a></li>
+        <li><a href="/faq">FAQs</a></li>
+      </ul>
+  </li>
+  <li><a href="/contact-us">Contact Us</a></li>
+</ul>

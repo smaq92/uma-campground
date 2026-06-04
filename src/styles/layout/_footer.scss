@@ -1,0 +1,30 @@
+footer{
+  display: flex;
+  flex-direction: column;
+}
+
+h2 .logo{
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+h2 + p {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+img{
+  max-width: 24px;
+  height: auto;
+}
+
+.address, .address + div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0 0;
+  width: 100%;
+}
+
+

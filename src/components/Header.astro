@@ -1,11 +1,14 @@
 ---
 import Hamburger from "../components/Hamburger.astro";
 import Navigation from '../components/Navigation.astro';
+const { showBookButton = true } = Astro.props;
 ---
 <header>
-  <div><img class="logo" src="/logo.png" alt="Uma Campground logo" /></div>
+  <div><a href = "/"><img class="logo" src="/logo.png" alt="Uma Campground logo" /></a></div>
+  {showBookButton ? (
+    <a href="/book-campsite" class="book-btn btn btn--primary">Book Now</a>
+  ) : null}
   <nav aria-label="main-nav">
-    <Hamburger />
-    <Navigation />
+      <Navigation />
   </nav>
 </header>

@@ -1,26 +1,26 @@
 
 // BASE
-@import "base/reset";
-@import "base/variables";
-@import "base/typography";
-@import "base/themes";
-@import "base/globals";
+@use "base/reset";
+@use "base/variable";
+@use "base/typography";
+@use "base/themes";
+@use "base/globals";
 
 // UTILITIES
-@import "utilities/mixins";
-@import "utilities/functions";
-@import "utilities/helpers";
+@use "utilities/mixins";
+@use "utilities/functions";
+@use "utilities/helpers";
 
 // LAYOUT
-@import "layout/grid";
-@import "layout/header";
-@import "layout/footer";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
 
 // COMPONENTS
-@import "components/buttons";
-@import "components/cards";
-@import "components/forms";
-@import "components/map";
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/map";
 
 // PAGES
-@import "pages/home";
+@use "pages/home";

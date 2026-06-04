@@ -1,0 +1,157 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+}
+
+.logo {
+  max-width: 60px;
+}
+
+// hamburger button
+.hamburger-btn {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-width: 44px;
+  padding: 0.5rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+// menu links ul
+.menu_links {
+  background: #ffffff;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu_links li {
+  position: relative;
+}
+
+.menu_links > li > a {
+  display: flex;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+.menu_links li:hover {
+  background-color: pink;
+}
+
+.menu_links li:hover > ul,
+.menu_links li:focus-within > ul {
+  display: block;
+}
+
+.sub-menu {
+  background: yellow;
+  padding-left: 1rem;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1000;
+}
+
+.menu_links.open, sub-menu.open, .has-dropdown.open > .sub-menu {
+  display: flex;
+}
+
+.menu_links li:hover > ul,
+.menu_links li:focus-within > ul {
+  display: none;
+}
+
+
+
+// .menu_links li.submenu-open > ul {
+//   display: block;
+// }
+
+/* Submenu toggle button (inserted by JS). Hidden on large screens, visible on mobile. */
+
+// .hamburger-btn {
+//   display: inline-flex;
+// }
+
+/* show submenu toggles on mobile */
+// .submenu-toggle {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+
+
+// .menu_links li ul a {
+//   padding-left: 1.25rem;
+//   background: transparent;
+// }
+
+// .menu_links li ul {
+//   background-color: yellow;
+//         position: static;
+//         top: auto;
+//         left: auto;
+//         box-shadow: none;
+//         background: transparent;
+//         padding: 0;
+//         margin: 0;
+//       }
+// add hover style for top-level menu items that have submenus
+
+// .sub-menu {
+//   position: absolute;
+//   top: calc(100% + 0.5rem);
+//   left: 0;
+//   min-width: 240px;
+//   margin: 0;
+//   padding: 0.5rem 0;
+//   list-style: none;
+//   background: pink;
+//   border-radius: 1rem;
+//   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+//   display: none;
+//   z-index: 1000;
+// }
+
+// .menu_links li ul li {
+//   width: 100%;
+// }
+
+// .menu_links li ul li + li a {
+//   border-top: 1px solid rgba(0, 0, 0, 0.08);
+// }
+
+// .menu_links li ul a {
+//   display: block;
+//   padding: 0.85rem 1rem;
+//   color: #222222;
+//   text-decoration: none;
+//   font-size: 0.95rem;
+//   transition: background-color 0.2s ease, color 0.2s ease;
+// }
+
+// .menu_links li ul a:hover,
+// .menu_links li ul a:focus {
+//   background-color: rgba(0, 0, 0, 0.04);
+//   color: #000000;
+// }
+
+/* When JS toggles this class, show the submenu (useful on touch/mobile) */
+
+@media (min-width: 900px) {
+}

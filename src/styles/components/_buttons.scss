@@ -1,0 +1,25 @@
+.btn {
+  font: 500 20px/1.5 "Karla", sans-serif;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+
+
+  &--primary {
+    background: #4D5B30;
+    color: #F4F2F1;
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid #4D5B30;
+    color: #4D5B30;
+  }
+
+  &--secondary {
+    background: #EC955F;
+    color: #222B31;
+  }
+}
