@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
+import { supabase } from '../db/supabase';
+const { data: campsites, error } = await supabase
+  .from("campsites")
+  .select("*");
 ---
+
+
 
 <BaseLayout pageTitle={pageTitle}  showBookButton={false}>
   <!-- hero image -->
@@ -9,6 +15,20 @@ const pageTitle = "Home";
   <img src="https://source.unsplash.com/random/1200x900" alt="Hero Image" />
   <!-- end of hero image -->
   <!-- Insert scroll for more -->
+
+
+  <h1>Campsites from supabase check</h1>
+
+{error && <p>Failed to load campsites</p>}
+
+<ul>
+  {campsites?.map(site => (
+    <li>
+      {site.site_id} — {site.type} — Max {site.max_people}
+       <img src={site.image_url} alt={site.name} />
+    </li>
+  ))}
+</ul>
   <h2>
     Unbelievably Meditative Adventure (UMA) Campground offers a quaint, inviting
     space to escape from the everyday monotony of life...
