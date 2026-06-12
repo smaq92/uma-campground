@@ -1,13 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
-import { supabase } from '../db/supabase';
-const { data: campsites, error } = await supabase
-  .from("campsites")
-  .select("*");
 ---
-
-
 
 <BaseLayout pageTitle={pageTitle}  showBookButton={false}>
   <!-- hero image -->
@@ -15,45 +9,40 @@ const { data: campsites, error } = await supabase
   <img src="https://source.unsplash.com/random/1200x900" alt="Hero Image" />
   <!-- end of hero image -->
   <!-- Insert scroll for more -->
-
-
-  <h1>Campsites from supabase check</h1>
-
-{error && <p>Failed to load campsites</p>}
-
-<ul>
-  {campsites?.map(site => (
-    <li>
-      {site.site_id} — {site.type} — Max {site.max_people}
-       <img src={site.image_url} alt={site.name} />
-    </li>
-  ))}
-</ul>
   <h2>
     Unbelievably Meditative Adventure (UMA) Campground offers a quaint, inviting
     space to escape from the everyday monotony of life...
   </h2>
   <!-- form -->
   <form action="">
-    <label for="booking-date">Select Date:</label>
-    <input type="date" id="booking-date" name="booking-date" required />
-    <label for="party-size">Party Size:</label>
+    <div>
+      <label for="check-in-date">Check-in Date:</label>
+      <input type="date" id="check-in-date" name="check-in-date" required />
+    </div>
+    <div>
+      <label for="check-out-date">Check-out Date:</label>
+      <input type="date" id="check-out-date" name="check-out-date" required />
+</div>
+    <label for="campers-size">Campers:</label>
     <input
       type="number"
-      id="party-size"
-      name="party-size"
+      id="campers-size"
+      name="campers-size"
       min="1"
-      max="10"
+      max="6"
       required
     />
-    <label for="equipment">Equipment</label>
-    <select id="equipment" name="equipment" required>
-      <option value="1" selected>Small Tent</option>
-      <option value="2">Big Tent</option>
-      <option value="3">Campervan/RV</option>
+    <label for="camp-type">Camp Type</label>
+    <select id="camp-type" name="camp-type" required>
+      <option value="1" selected>Basic Site</option>
+      <option value="2">Powered Site</option>
+      <option value="3">Group Site</option>
     </select>
-    <button type="submit">Search Available Sites</button>
+    <button type="submit" class="search-available-sites">Search Available Sites</button>
   </form>
+  <div id="campsite-results">
+  </div>
+
   <div>
     <div>
       <img
@@ -109,4 +98,70 @@ const { data: campsites, error } = await supabase
   <button type="submit">Message Us</button>
   <small>Or you can head straight to our <a href="/faq">FAQ's page</a></small>
 </form>
+<script type="module">
+import { supabase } from '/src/db/supabase';
+    console.log("SUPABASE:", supabase);
+
+
+  const searchButton = document.querySelector(".search-available-sites");
+  const campsiteResultsContainer = document.getElementById("campsite-results");
+ const checkInInput = document.getElementById("check-in-date");
+ const checkOutInput = document.getElementById("check-out-date");
+ const camperSizeInput = document.getElementById("campers-size");
+ const campTypeSelect = document.getElementById("camp-type");
+
+  searchButton?.addEventListener("click", async (e) =>{
+    e.preventDefault();
+
+    console.log("clicked")
+     if (campsiteResultsContainer) {
+      campsiteResultsContainer.innerHTML = '<p>Searching available spots...</p>';
+    }
+    const checkInDate = checkInInput?.value;
+    const checkOutDate = checkOutInput?.value;
+    const camperSize = Number(camperSizeInput?.value);
+    const campType = Number(campTypeSelect?.value);
+    
+    if (!checkInDate || !checkOutDate) {
+      alert('Please select both a check-in and check-out date.');
+      return;
+    }
+
+   const { data: availableCampsites, error: bookingError } = await supabase.rpc( "get_available_campsites",
+  {
+    p_check_in: checkInDate,
+    p_check_out: checkOutDate,
+    p_campers: camperSize,
+    p_camp_type: campType
+  });
+
+ if (bookingError) {
+  console.error(bookingError);
+  if (campsiteResultsContainer) {
+    campsiteResultsContainer.innerHTML = '<p>There is an error.</p>';
+  }
+  return;
+}
+
+
+  if (campsiteResultsContainer) {
+    if (!availableCampsites || availableCampsites.length === 0) {
+      campsiteResultsContainer.innerHTML = '<p>No campsites available matching your criteria.</p>';
+      return;
+    }
+
+    console.log(availableCampsites);
+    campsiteResultsContainer.innerHTML = availableCampsites
+      .map(site => `
+        <div class="site-card">
+          <h3>${site.name}</h3>
+          <img src="${site.image}" alt="${site.name} campsite image">
+          <p>Type: ${site.type_name} | Max Guests: ${site.max_campers}</p>
+          <p class="price">$${site.price} / night</p>
+        </div>
+      `).join('');
+  }
+  })
+</script>
 </BaseLayout>
+
