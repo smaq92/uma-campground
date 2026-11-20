@@ -1,3 +1,5 @@
+// Javascript for general functionality of the website
+
 const hamburgerButton = document.querySelector(".hamburger-btn");
 const navigationMenu = document.querySelector(".menu_links");
 const dropdownLinks = document.querySelectorAll(".has-dropdown > a");
@@ -29,5 +31,18 @@ dropdownLinks.forEach((link) => {
 });
 
 
+// this is for the modal
+const openModalButton = document.getElementById("open-policy-modal");
+const closeModalButton = document.getElementById("agree-policy");
 
+function openModal() {
+  const modal = document.getElementById("policy-modal");
+  modal.style.display = "block";
+}
+function closeModal() {
+  const modal = document.getElementById("policy-modal");
+  modal.style.display = "none";
+}
 
+openModalButton.addEventListener("click", openModal);
+closeModalButton.addEventListener("click", closeModal);

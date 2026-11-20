@@ -1,13 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CampgroundPolicies from "../components/campground-policies.astro";
 const pageTitle = "Booking";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="camp-details">
   </section>
+ <section>
+  <h2>Before proceeding to payment</h2>
+  <p>Please review and agree to the campground guidelines and cancellation policy.</p>
+  <button id="open-policy-modal">Read Policies and Guidelines</button> 
+ </section>
+<button id="confirm-booking" disabled>Confirm & Pay</button>
+
+
+
+<div class="policy-modal" id="policy-modal">
+  <div class="policy-modal-content">
+    <CampgroundPolicies />
+
+    <button id="agree-policy" type="button">
+      I Agree
+    </button>
+  </div>
+</div>
 </BaseLayout>
-
-
 
 <script src="../scripts/booking.js"></script>

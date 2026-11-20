@@ -1,4 +1,6 @@
 
+//Javascrift file that handles the booking process (i.e. selecting a site from database via human input) 
+
 import { supabase } from "/src/db/supabase";
 
 // get selected site from local storage
@@ -93,7 +95,7 @@ async function renderBooking(site, dbSite){
     </tr>
     <tr>
       <td>Booking Fee</td>
-      <td>${bookingFee.value}</td>
+      <td>$${bookingFee.value}</td>
     </tr>
   </table>
   `
@@ -115,7 +117,6 @@ async function initBooking(){
 }
 
 initBooking();
-
 
 
 

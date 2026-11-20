@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BookingForm from "../components/BookingForm.astro";
 const pageTitle = "Home";
 ---
 
@@ -14,32 +15,7 @@ const pageTitle = "Home";
     space to escape from the everyday monotony of life...
   </h2>
   <!-- form -->
-  <form action="">
-    <div>
-      <label for="check-in-date">Check-in Date:</label>
-      <input type="date" id="check-in-date" name="check-in-date" required />
-    </div>
-    <div>
-      <label for="check-out-date">Check-out Date:</label>
-      <input type="date" id="check-out-date" name="check-out-date" required />
-</div>
-    <label for="campers-size">Campers:</label>
-    <input
-      type="number"
-      id="campers-size"
-      name="campers-size"
-      min="1"
-      max="6"
-      required
-    />
-    <label for="camp-type">Camp Type</label>
-    <select id="camp-type" name="camp-type" required>
-      <option value="1" selected>Basic Site</option>
-      <option value="2">Powered Site</option>
-      <option value="3">Group Site</option>
-    </select>
-    <button type="submit" class="search-available-sites">Search Available Sites</button>
-  </form>
+  <BookingForm />
   <div id="campsite-results">
   </div>
 
