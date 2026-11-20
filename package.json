@@ -12,10 +12,11 @@
   "author": "Sam Aquino",
   "description": "A modern campground with built-in booking and information site built with Astro",
   "dependencies": {
-    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/partytown": "^2.1.9",
+    "@astrojs/vercel": "^11.0.22",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@supabase/supabase-js": "^2.107.0",
-    "astro": "^5.15.4",
+    "astro": "^7.4.13",
     "stripe": "^22.3.1"
   },
   "devDependencies": {
@@ -23,5 +24,10 @@
     "stylelint": "^16.25.0",
     "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-scss": "^6.12.1"
+  },
+  "overrides": {
+  "@vercel/routing-utils": {
+    "path-to-regexp": "6.3.0"
   }
+}
 }
