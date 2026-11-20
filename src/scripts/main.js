@@ -34,6 +34,7 @@ dropdownLinks.forEach((link) => {
 // this is for the modal
 const openModalButton = document.getElementById("open-policy-modal");
 const closeModalButton = document.getElementById("agree-policy");
+const confirmBookingButton = document.getElementById("confirm-booking");
 
 function openModal() {
   const modal = document.getElementById("policy-modal");
@@ -42,6 +43,7 @@ function openModal() {
 function closeModal() {
   const modal = document.getElementById("policy-modal");
   modal.style.display = "none";
+  confirmBookingButton.disabled = false;
 }
 
 openModalButton.addEventListener("click", openModal);
